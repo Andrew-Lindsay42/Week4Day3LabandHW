@@ -40,7 +40,7 @@ def show_book(id):
 
 # EDIT
 # GET '/books/<id>/edit'
-@books_blueprint.route("/books/<id>/edit", methods=['GET'])
+@books_blueprint.route("/books/edit/<id>", methods=['GET'])
 def edit_book(id):
     book = book_repository.select(id)
     authors = author_repository.select_all()
