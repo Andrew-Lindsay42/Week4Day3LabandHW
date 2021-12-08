@@ -14,5 +14,5 @@ author_repository.save(author1)
 
 book1 = Book("The Lord of the Rings", "Fantasy", author1, "Penguin") 
 book_repository.save(book1)
-book2 = Book("The Hobbit", "Fantasy", author1, "penguin")
+book2 = Book("The Hobbit", "Fantasy", author1, "Penguin")
 book_repository.save(book2)

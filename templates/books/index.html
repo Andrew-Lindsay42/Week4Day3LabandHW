@@ -3,8 +3,7 @@
     {% for book in all_books %}
         <div class="book">
             <p>{{ book.title }}</p>
-            <p>{{ book.author.first_name }}</p>
-            <p>{{ book.author.last_name }}</p>
+            <p>{{ book.author.first_name }} {{ book.author.last_name }}</p>
             <p>{{ book.genre }}</p>
             <p>{{ book.publisher }}</p>
             <form action="/books/delete/{{book.id}}" method="post">
@@ -12,5 +11,4 @@
             </form>
         </div>
     {% endfor %}
-    
 {% endblock %}
