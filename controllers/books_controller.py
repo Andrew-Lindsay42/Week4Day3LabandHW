@@ -26,7 +26,7 @@ def create_book():
     genre = request.form['genre']
     publisher   = request.form['publisher']
     author  = author_repository.select(request.form['author_id'])
-    book = Book(title, genre, publisher, author)
+    book = Book(title, genre, author, publisher)
     book_repository.save(book)
     return redirect('/books')
 
@@ -54,7 +54,7 @@ def update_book(id):
     genre = request.form['genre']
     publisher   = request.form['publisher']
     author  = author_repository.select(request.form['author_id'])
-    book = Book(title, genre, publisher, author, id)
+    book = Book(title, genre, author, publisher, id)
     print(book.author.full_name())
     book_repository.update(book)
     return redirect('/books')
