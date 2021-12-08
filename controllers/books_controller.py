@@ -50,12 +50,11 @@ def edit_book(id):
 # PUT '/books/<id>'
 @books_blueprint.route("/books/<id>", methods=['POST'])
 def update_book(id):
-    title    = request.form['title']
+    title = request.form['title']
     genre = request.form['genre']
-    publisher   = request.form['publisher']
+    publisher = request.form['publisher']
     author  = author_repository.select(request.form['author_id'])
     book = Book(title, genre, author, publisher, id)
-    print(book.author.full_name())
     book_repository.update(book)
     return redirect('/books')
 
